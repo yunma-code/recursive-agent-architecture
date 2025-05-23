@@ -1,0 +1,56 @@
+{
+    "metadata": {
+        "system_prompt": "You are a metadata extractor for technical documents. Be concise.",
+        "prompts": {
+            "document_title": "What is the title or main topic of the document? Respond in <1 sentence.",
+            "document_type": "What type of document is this? Respond in <3 words.",
+            "document_purpose": "What is the purpose of this document? Respond in <1 sentence.",
+            "document_summary": "Summarize the document in 2-3 sentences.",
+            "content_type": "What is the type of content contained in the document? Respond in <3 words.",
+            "content_structure": "List only the top-level sections of the document. Number them (e.g., 1., 2., 3.) and do not include subpoints or bullet points. Provide at least 3-5 sections."
+        }
+    },
+    "analyze_document": {
+        "system_prompt": "You are a technical document analyst deciding if you have enough information for a patent.",
+        "prompts": {
+            "contains_technical_problem": "TRUE/FALSE: This document describes, references, or infers a technical problem. Explain your reasoning in <1 sentence.",
+            "contains_technical_solution": "TRUE/FALSE: This document describes, references, or infers a technical solution. Explain your reasoning in <1 sentence.",
+            "provides_technical_implementation": "TRUE/FALSE: This document provides a specific technical implementation of the technical solution. Explain your reasoning in <1 sentence.",
+            "easily_replicable": "TRUE/FALSE: A person skilled in the domain could replicate the technical solution based solely on the document. Explain your reasoning in <1 sentence.",
+            "solution_is_enabled": "TRUE/FALSE: The document provides enough specific technical implementation detail that the solution is \"enabled\". Explain your reasoning in <1 sentence.",
+            "contains_enough_detail_for_patent_attorney": "TRUE/FALSE: This document contains enough detail for a patent attorney to immediately draft a patent application. Explain your reasoning in <1 sentence."
+        }
+    },
+    "validate_document_depth": {
+        "system_prompt": "You are a technical document analyst deciding if you have enough information for a patent.",
+        "prompts": {
+            "technical_maturity": "Rate the technical maturity of the solution mentioned and explain your reasoning.",
+            "technical_difficulty": "Rate the technical difficulty of implementing the solution mentioned and explain your reasoning.",
+            "potential_areas_of_novelty": "Identify possible areas of opportunity for patenting."
+        }
+    },
+    "technical_characteristics": {
+        "system_prompt": "You are a metadata extractor for technical documents. Be concise.",
+        "prompts": {
+            "industry_domain": "List up to 5 industry domains associated with the document.",
+            "technical_domain": "List up to 5 technical domains associated with the document.",
+            "technical_concepts": "For each technical domain, list up to 5 techniques, concepts, functions, and/or components used."
+        }
+    },
+    "core_problem_extractor": {
+        "system_prompt": "You are a distinguished engineer with deep technical aptitude and expert problem-scoping skills",
+        "prompts": {
+            "core_problem": "Describe the core technical problem or unmet user need in a 5-sentence paragraph. Use specific examples to showcase how it is currently experienced. Focus on conveying well-scoped engineering problems that consider specific fundamental constraints that are innate to the domain.",
+            "decomposed_problem": "Deconstruct the problem into an exhaustive and complete list of sub-problems and problem components so that you fully understand it.",
+            "causal_issues": "For every sub-problem or problem component, use the 5 \"Why's\" framework on each to develop a deep and nuanced understanding of fundamental causal elements.",
+            "specific_root_causes": "Identify the core root causes of the problem to understand what's truly important. Differentiate between symptoms vs. root causes."
+        }
+    },
+    "use_case_analysis": {
+        "system_prompt": "You are a strategic analyst identifying technical use cases.",
+        "prompts": {
+            "problem_solved": "What problem is this system solving?",
+            "end_users": "Who are the end users or beneficiaries of this system?"
+        }
+    }
+} 
